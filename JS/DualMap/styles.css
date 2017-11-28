@@ -1,0 +1,239 @@
+html,
+body,
+#wrapper {
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+#wrapper {
+    display: table;
+}
+#map, #controller {
+    display: table-cell;
+    width: 50%;
+    height: 100%;
+    box-sizing: border-box;
+}
+#controller {
+    position: absolute;
+    padding-top: 20px;
+}
+#top {
+    height: calc(50% - 20px);
+    width: 100%;
+    display: inline-block;
+}
+#bottom-left {
+    width: calc(40% - 20px);
+    height: calc(50% - 20px);
+    padding: 20px 20px 10px 5px;
+    display: inline-block;
+    vertical-align: top;
+}
+.bottom-right {
+    width: calc(60% - 15px);
+    height: calc(50% + 20px - 2px);
+    padding: 5px;
+    display: inline-block;
+    vertical-align: top;
+    overflow-y: auto;
+}
+#map-canvas {
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+#input-parameter-area {
+    padding-bottom: 10px;
+}
+.right-bottom {
+    max-height: calc(100% - 200px);
+    width: calc(100% - 10px);
+    padding: 5px;
+    border-top-color: #eee;
+    border-top-style: solid;
+    border-top-width: thin;
+    overflow-y: auto;
+}
+#panel {
+    margin: 10px;
+}
+#search {
+    margin: 10px;
+}
+.dir-tm-d {
+    background: no-repeat url('img/dl6.png') 0 -96px;
+    width: 15px;
+    height: 12px;
+}
+.dir-tm-r {
+    background: no-repeat url('img/dl6.png') 0 -426px;
+    width: 13px;
+    height: 15px;
+}
+.dir-tm-w {
+    background: no-repeat url('img/dl6.png') 0 -489px;
+    width: 10px;
+    height: 16px;
+}
+.dir-tm-b {
+    background: no-repeat url('img/dl6.png') 0 -340px;
+    width: 17px;
+    height: 14px;
+}
+.kd-buttonbar {
+    padding-left: 55px;
+}
+.kd-button img {
+    margin: 0;
+    vertical-align: -4px;
+    opacity: 0.667;
+    line-height: 100%;
+    vertical-align: middle;
+}
+.dir-tm .kd-button {
+    padding: 0;
+    min-width: 50px;
+    width: 90px;
+}
+.kd-buttonbar .kd-button,
+.kd-buttonbar .kd-combobutton {
+    margin: 0;
+    position: relative;
+    z-index: 1;
+}
+.kd-button {
+    display: inline-block;
+    min-width: 54px;
+    border: 1px solid #dcdcdc;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    text-align: center;
+    color: #444;
+    font-size: 85%;
+    font-weight: bold;
+    height: 27px;
+    padding: 0 8px;
+    line-height: 27px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    -webkit-transition: all 0.218s;
+    -moz-transition: all 0.218s;
+    -o-transition: all 0.218s;
+    transition: all 0.218s;
+    background-color: #f5f5f5;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#f5f5f5), to(#f1f1f1));
+    background-image: -webkit-linear-gradient(top, #f5f5f5, #f1f1f1);
+    background-image: -moz-linear-gradient(top, #f5f5f5, #f1f1f1);
+    background-image: -ms-linear-gradient(top, #f5f5f5, #f1f1f1);
+    background-image: -o-linear-gradient(top, #f5f5f5, #f1f1f1);
+    background-image: linear-gradient(top, #f5f5f5, #f1f1f1);
+}
+.kd-button.selected img {
+    opacity: 0.9 !important;
+}
+.kd-button.selected,
+.kd-button.selected:hover, .kd-button.selected:active {
+    background-color: #eee;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#eee), to(#e0e0e0));
+    background-image: -webkit-linear-gradient(top, #eee, #e0e0e0);
+    background-image: -moz-linear-gradient(top, #eee, #e0e0e0);
+    background-image: -ms-linear-gradient(top, #eee, #e0e0e0);
+    background-image: -o-linear-gradient(top, #eee, #e0e0e0);
+    background-image: linear-gradient(top, #eee, #e0e0e0);
+    -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ccc;
+    color: #333;
+}
+.kd-button-mid1 {
+    display: none;
+}
+.kd-button-right {
+    display: none;
+}
+#search-wrapper {
+    padding: 10px;
+}
+#search-inputs {
+    padding: 0px 5px 10px 5px;
+}
+.search-input {
+    padding: 10px;
+    height: 24px;
+}
+.search-img {
+    margin-right: 5px;
+    margin-top:5px;
+    width: 24px;
+    height: 24px;
+    overflow: hidden;
+    float: left;
+}
+.search-point {
+    width: calc(100% - 30px);
+    display: inline-block;
+}
+#search-button input {
+    border-top: 1px solid #ccc;
+    border-right: 1px solid #999;
+    border-bottom: 1px solid #999;
+    border-left: 1px solid #ccc;
+    padding: 5px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #666;
+    border-radius: 3px;
+    text-shadow: 0 -1px 1px #FFF, -1px 0 1px #FFF, 1px 0 1px #aaa;
+    box-shadow: 1px 1px 2px #E7E7E7;
+    background: -webkit-gradient(linear, left top, left bottom, from(#fff), color-stop(0.01, #F1F1F1), color-stop(0.5, #F1F1F1), color-stop(0.99, #DFDFDF), to(#ccc));
+    background: linear-gradient(to bottom, #fff 0%, #f1f1f1 1%, #f1f1f1 50%, #dfdfdf 99%, #ccc 100%);
+}
+#search-button input:hover {
+    background: -webkit-gradient(linear, left top, left bottom, from(#fff), color-stop(0.01, #e1e1e1), color-stop(0.5, #e1e1e1), color-stop(0.99, #cfcfcf), to(#ccc));
+    background: -moz-linear-gradient(top, #fff, #e1e1e1 1%, #e1e1e1 50%, #cfcfcf 99%, #ccc);
+    background: linear-gradient(to bottom, #fff 0%, #e1e1e1 1%, #e1e1e1 50%, #cfcfcf 99%, #ccc 100%);
+}
+#search-button input:active {
+    background: #ccc;
+    padding: 6px 20px 4px;
+}
+
+input:not([type]),
+input[type='text'] {
+    min-width: 90%;
+    border-top: 1px solid #ccc;
+    border-right: 1px solid #999;
+    border-bottom: 1px solid #999;
+    border-left: 1px solid #ccc;
+    padding: 5px 20px;
+    cursor: pointer;
+    color: #666;
+    border-radius: 3px;
+    box-shadow: 1px 1px 2px #E7E7E7;
+}
+#adp-placemark, .adp-placemark {
+    border-top: 1px solid #ccc;
+    border-right: 1px solid #999;
+    border-bottom: 1px solid #999;
+    border-left: 1px solid #ccc;
+    padding: 5px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #666;
+    border-radius: 3px;
+    text-shadow: 0 -1px 1px #FFF, -1px 0 1px #FFF, 1px 0 1px #aaa;
+    box-shadow: 1px 1px 2px #E7E7E7;
+}
+#adp-placemark:hover, .adp-placemark:hover {
+    background: -webkit-gradient(linear, left top, left bottom, from(#fff), color-stop(0.01, #e1e1e1), color-stop(0.5, #e1e1e1), color-stop(0.99, #cfcfcf), to(#ccc));
+    background: -moz-linear-gradient(top, #fff, #e1e1e1 1%, #e1e1e1 50%, #cfcfcf 99%, #ccc);
+    background: linear-gradient(to bottom, #fff 0%, #e1e1e1 1%, #e1e1e1 50%, #cfcfcf 99%, #ccc 100%);
+}
+#adp-placemark:active, .adp-placemark:active {
+    background: #ccc;
+    padding: 6px 20px 4px;
+}

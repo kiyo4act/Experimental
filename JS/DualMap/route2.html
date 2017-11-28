@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Travel modes in directions</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&language=en"></script>
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <div id="wrapper">
+
+        <div id="top">
+            <div id="map-canvas"></div>
+        </div>
+
+        <div id="bottom-left">
+            <div class="kd-buttonbar dir-tm">
+                <a href="javascript:void(0)" value="DRIVING" class="kd-button kd-button-left selected">
+                    <img src="img/transparent.png" class="dir-tm-d">
+                </a>
+                <a href="javascript:void(0)" value="TRANSIT" class="kd-button kd-button-mid1">
+                    <img src="img/transparent.png" class="dir-tm-r">
+                </a>
+                <a href="javascript:void(0)" value="WALKING" class="kd-button kd-button-mid2">
+                    <img src="img/transparent.png" class="dir-tm-w">
+                </a>
+                <a href="javascript:void(0)" value="BICYCLING" class="kd-button kd-button-right">
+                    <img src="img/transparent.png" class="dir-tm-b">
+                </a>
+            </div>
+
+            <div id="search-wrapper">
+                <div id="search-inputs">
+
+                    <div id="search-input-0" class="search-input">
+                        <div id="search-img-0" class="search-img">
+                            <img src="img/PointA.png">
+                        </div>
+                        <div id="search-point-0" class="search-point">
+                            <input id="input" type="text" placeholder="Start">
+                        </div>
+                    </div>
+
+                    <div id="search-input-1" class="search-input">
+                        <div id="search-img-1" class="search-img">
+                            <img src="img/PointB.png">
+                        </div>
+                        <div id="search-point-1" class="search-point">
+                            <input id="input" type="text" placeholder="Goal">
+                        </div>
+                    </div>
+                </div>
+                <div id="add-search-input"></div>
+                <div id="delete-search-input"></div>
+                <div id="search-button">
+                    <input type="button" value="Search">
+                </div>
+            </div>
+        </div>
+        <div id="result" class="bottom-right"></div>
+    </div>
+</body>
+
+</html>
