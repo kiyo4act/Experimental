@@ -1,0 +1,49 @@
+﻿<Window x:Class="GoogleTranscribeStreamingDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GoogleTranscribeStreamingDemo"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="500" Width="700" Loaded="Window_Loaded">
+    <Grid x:Name="RouteGrid">
+        <Button x:Name="ButtonStartRecord" Content="Start Recording" HorizontalAlignment="Left" Margin="26,30,0,0" VerticalAlignment="Top" Width="100" Click="ButtonStartRecord_Click"/>
+        <Button x:Name="ButtonStopRecord" Content="Stop Recording" HorizontalAlignment="Left" Margin="131,30,0,0" VerticalAlignment="Top" Width="100" Click="ButtonStopRecord_Click"/>
+        <ComboBox x:Name="ComboBoxLanguage" HorizontalAlignment="Left" Margin="95,70,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBoxItem Content="en-US" IsSelected="True"></ComboBoxItem>
+            <ComboBoxItem Content="ja-JP"></ComboBoxItem>
+        </ComboBox>
+        <Label Content="Language:" HorizontalAlignment="Left" Margin="26,66,0,0" VerticalAlignment="Top"/>
+        <Label Content="State:" HorizontalAlignment="Left" Margin="311,12,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="LabelState" Content="Null" HorizontalAlignment="Left" Margin="350,12,0,0" VerticalAlignment="Top" Width="140"/>
+        <GroupBox x:Name="groupBox" Header="Result" Margin="14,322,10,12">
+            <ScrollViewer>
+                <TextBlock x:Name="TextBlockResult" HorizontalAlignment="Left" TextWrapping="Wrap" Width="636" Text="" Height="113" />
+            </ScrollViewer>
+        </GroupBox>
+
+        <Label Content="Transcript:" HorizontalAlignment="Left" Margin="286,38,0,0" VerticalAlignment="Top"/>
+        <Label Content="Confidence:" HorizontalAlignment="Left" Margin="277,64,0,0" VerticalAlignment="Top"/>
+        <Label Content="IsFinal:" HorizontalAlignment="Left" Margin="305,90,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="LabelTranscript" Content="Null" HorizontalAlignment="Left" Margin="350,38,0,0" VerticalAlignment="Top" Width="300"/>
+        <Label x:Name="LabelConfidence" Content="Null" HorizontalAlignment="Left" Margin="350,64,0,0" VerticalAlignment="Top" Width="140"/>
+        <Label x:Name="LabelIsFinal" Content="Null" HorizontalAlignment="Left" Margin="350,90,0,0" VerticalAlignment="Top" Width="140"/>
+        <ListView x:Name="ResultsListView" ItemsSource="{Binding DataContext, Mode=OneWay, RelativeSource={RelativeSource Self}}" Height="151" Margin="14,166,10,0" VerticalAlignment="Top">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Transcript}" Header="Transcript" Width="450"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Confidence}" Header="Confidence" Width="100"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding IsFinal}" Header="IsFinal" Width="100"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Label Content="Time:" HorizontalAlignment="Left" Margin="495,12,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="LabelTime" Content="Null" HorizontalAlignment="Left" Margin="534,12,0,0" VerticalAlignment="Top" Width="140"/>
+        <TextBox x:Name="TextBoxSpeech" HorizontalAlignment="Left" Height="23" Margin="106,134,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="496"/>
+        <Label Content="Speech Text:" HorizontalAlignment="Left" Margin="26,131,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="ButtonSpeech" Content="Speech" Margin="607,136,10,0" VerticalAlignment="Top" Click="ButtonSpeech_Click"/>
+        <ComboBox x:Name="ComboBoxRecordingDevice" HorizontalAlignment="Left" Margin="95,101,0,0" VerticalAlignment="Top" Width="120" ItemsSource="{Binding DataContext, Mode=OneWay, RelativeSource={RelativeSource Self}}">
+        </ComboBox>
+        <Label Content="Device:" HorizontalAlignment="Left" Margin="42,97,0,0" VerticalAlignment="Top"/>
+    </Grid>
+</Window>
